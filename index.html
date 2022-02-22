@@ -49,11 +49,53 @@
                     <li class="nav-item">
                         <a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span>contact</a></li>
                 </ul>
-
+                <span class="navbar-text">
+                    <a data-toggle="modal" data-target="#loginModal">
+                    <span class="fa fa-sign-in"></span> Login</a>
+                </span>
             </div>
 
         </div>
     </nav>
+    <!--  Adding a Modal -->
+
+    <div id="loginModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="content">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Login </h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-sm-4">
+                                <label class="sr-only" for="exampleInputEmail3">Email address</label>
+                                <input type="email" class="form-control form-control-sm mr-1" id="exampleInputEmail3" placeholder="Enter email">
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label class="sr-only" for="exampleInputPassword3">Password</label>
+                                <input type="password" class="form-control form-control-sm mr-1" id="exampleInputPassword3" placeholder="Password">
+                            </div>
+                            <div class="col-sm-auto">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox">
+                                    <label class="form-check-label"> Remember me
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <header class="jumbotron">
         <div class="container">
             <div class="row row-header">
@@ -61,21 +103,74 @@
                     <h1>Ristorante con Fusion</h1>
                     <p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations will tickle your culinary senses!</p>
                 </div>
-                <div class="col-12 col-sm align-self-center text-center">
-                    <div class="row">
-                        <div class="col-6">
-                            <img src="./img/logo.png" class="img-fluid" alt="">
-                        </div>
-                        <div class="col-6 align-self-center">
-                            <a class="btn btn-warning px-5" href="#reservetable">Reserve Table</a>
-                        </div>
-                    </div>
+                <div class="col-12 col-sm align-self-center ">
+                    <!--- <img src="./img/logo.png " class="img-fluid " alt=" ">  -->
+                    <img src="./img/logo.png " class="img-fluid ">
+                </div>
+                <div class="col-12 col-sm align-self-center ">
+                    <!--  <a role="button" class="btn btn-block nav-link btn-warning" data-toggle="tooltip" data-html="true" title="Or Call us at  <br><strong>+852 12345678</strong>" data-placement="bottom" href="#reserveform">Reserve Table</a>  -->
+                    <a role="button" class="btn btn-block nav-link btn-warning" data-toggle="modal" data-target="#reserveform">Reserve Table</a>
                 </div>
             </div>
         </div>
     </header>
 
     <div class="container ">
+        <!---    Carousel  -->
+        <div class="row row-content">
+            <div class="col">
+                <div id="mycarousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <img class="d-block img-fluid" src="img/uthappizza.png" alt="Uthappizza">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h2>Uthappizza <span class="badge badge-danger">HOT</span> <span class="badge badge-pill badge-default">$4.99</span></h2>
+                                <p class="d-none d-sm-block ">
+                                    A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.</p>
+
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="img/buffet.png " alt="buffet">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h2>Weekend Grand Buffet <span class="badge badge-danger ">NEW</span></h2>
+                                <p class="d-none d-sm-block ">Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person </p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="img/alberto.png " alt="alberto">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h2>Alberto Somayya</h2>
+                                <h4>Executive Chef</h4>
+                                <p class="d-none d-sm-block ">Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--
+                        we will add manual controls to the carousel so that we can manually move among the slides.
+                         Add the following code to the bottom after the carousel items in the div of the carousel to add slide indicators
+                          that enable us to select a specific slide:
+                    -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#mycarousel" data-slide-to="1"></li>
+                        <li data-target="#mycarousel" data-slide-to="2"></li>
+                    </ol>
+                    <!--  Then, add the left and right controls to the carousel that enable us to move to the previous and next slide manually. 
+                        Add this to the bottom of the carousel div:-->
+                    <a class="carousel-control-prev" href="#mycarousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+
+
         <div class="row row-content align-items-center ">
             <div class="col-12 col-sm-4 order-sm-last col-md-3 ">
                 <h3>Our Lipsmacking Culinary Creations</h3>
@@ -97,120 +192,221 @@
                 </div>
             </div>
         </div>
-    </div>
 
 
-    <!--  mr means marging right
+
+        <!--  mr means marging right
           mt means margin top-->
-    <div class="row row-content align-items-center">
-        <div class="col-12 col-sm-4 order-sm-last col-md-3">
-            <h3>This Month's Promotions</h3>
-        </div>
-        <div class="d-flex col-12 col-sm-8 order-sm-first col-md-9">
-            <div class="media mr-3">
-                <img src="img/buffet.png" class="d-flex img-thumbnail ml-2 align-self-center" alt="buffet">
+        <div class="row row-content align-items-center ">
+            <div class="col-12 col-sm-4 order-sm-last col-md-3 ">
+                <h3>This Month's Promotions</h3>
             </div>
-            <div class="media-body align-self-center">
-                <h2 class="mt-0">Weekend Grand Buffet <span class="badge badge-danger">NEW</span></h2>
-                <p class="d-none d-sm-block">Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person </p>
+            <div class="d-flex col-12 col-sm-8 order-sm-first col-md-9 ">
+                <div class="media mr-3 ">
+                    <img src="img/buffet.png " class="d-flex img-thumbnail ml-2 align-self-center " alt="buffet ">
+                </div>
+                <div class="media-body align-self-center ">
+                    <h2 class="mt-0 ">Weekend Grand Buffet <span class="badge badge-danger ">NEW</span></h2>
+                    <p class="d-none d-sm-block ">Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person </p>
+                </div>
             </div>
         </div>
-    </div>
 
 
-    <div class="row row-content align-items-center">
-        <div class="col-12 col-sm-4 col-md-3">
-            <h3>Meet our Culinary Specialists</h3>
-        </div>
-        <div class="d-flex col-12 col-sm-8 col-md-9">
-            <div class="media mr-3">
-                <img src="img/alberto.png" class="d-flex img-thumbnail ml-2 align-self-center" alt="alberto">
+        <div class="row row-content align-items-center ">
+            <div class="col-12 col-sm-4 col-md-3 ">
+                <h3>Meet our Culinary Specialists</h3>
             </div>
-            <div class="media-body align-self-center">
-                <h2 class="mt-0">Alberto Somayya</h2>
-                <h4>Executive Chef</h4>
-                <p class="d-none d-sm-block">Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. </p>
+            <div class="d-flex col-12 col-sm-8 col-md-9 ">
+                <div class="media mr-3 ">
+                    <img src="img/alberto.png " class="d-flex img-thumbnail ml-2 align-self-center " alt="alberto ">
+                </div>
+                <div class="media-body align-self-center ">
+                    <h2 class="mt-0 ">Alberto Somayya</h2>
+                    <h4>Executive Chef</h4>
+                    <p class="d-none d-sm-block ">Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. </p>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="row row-content" id="reservetable">
-        <div class="col-sm-2"></div>
-        <div class="col-12 col-sm">
-            <form>
-                <div class="form-group row bg-warning p-2">
-                    <h3>Reserve a Table</h3>
-                </div>
-                <div class="form-group row">
-                    <label for="guestNumber" class="col-form-label col-5 col-sm-3">Number of Guests</label>
-                    <p><input type="radio" name="guestNumber" id="guestNumber" value="1"> 1 &nbsp;</p>
-                    <p><input type="radio" name="guestNumber" id="guestNumber" value="2"> 2 &nbsp;</p>
-                    <p><input type="radio" name="guestNumber" id="guestNumber" value="3"> 3 &nbsp;</p>
-                    <p><input type="radio" name="guestNumber" id="guestNumber" value="4"> 4 &nbsp;</p>
-                    <p><input type="radio" name="guestNumber" id="guestNumber" value="5"> 5 &nbsp;</p>
-                    <p><input type="radio" name="guestNumber" id="guestNumber" value="6"> 6 &nbsp;</p>
-                </div>
-                <div class="form-group row">
-                    <label for="datetime" class="col-form-label col-4 col-md-3">Date and Time</label>
-                    <input type="date" class="form-control col-4 my-1 mx-1" id="datetime" name="date" placeholder="Choose Date">
-                    <input type="time" class="form-control col-3 my-1" id="datetime" name="time" placeholder="Choose Time">
-                </div>
-                <div class="form-group row">
-                    <div class="col-12 offset-sm-3 offset-lg-2 col-md-12">
-                        <button type="submit" class="btn btn-primary">Reserve</button>
+
+        <!--
+            <div class="row row-content" id="reserveform">
+             <div class="col-sm-2"></div>
+            <div class="col-12 col-sm">
+                <form>
+                    <div class="form-group row bg-warning p-2">
+                        <h3>Reserve a Table</h3>
+                    </div>
+                    <div class="form-group row">
+                        <label for="guestNumber" class="col-form-label col-5 col-sm-3">Number of Guests</label>
+                        <p><input type="radio" name="guestNumber" id="guestNumber" value="1"> 1 &nbsp;</p>
+                        <p><input type="radio" name="guestNumber" id="guestNumber" value="2"> 2 &nbsp;</p>
+                        <p><input type="radio" name="guestNumber" id="guestNumber" value="3"> 3 &nbsp;</p>
+                        <p><input type="radio" name="guestNumber" id="guestNumber" value="4"> 4 &nbsp;</p>
+                        <p><input type="radio" name="guestNumber" id="guestNumber" value="5"> 5 &nbsp;</p>
+                        <p><input type="radio" name="guestNumber" id="guestNumber" value="6"> 6 &nbsp;</p>
+                    </div>
+                    <div class="form-group row">
+                        <label for="datetime" class="col-form-label col-4 col-md-3">Date and Time</label>
+                        <input type="date" class="form-control col-4 my-1 mx-1" id="datetime" name="date" placeholder="Choose Date">
+                        <input type="time" class="form-control col-3 my-1" id="datetime" name="time" placeholder="Choose Time">
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-12 offset-sm-3 offset-lg-2 col-md-12">
+                            <button type="submit" class="btn btn-primary">Reserve</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+    </div>                 
+
+
+    Adding a Modal -->
+
+        <div id="reserveform" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-lg" role="content">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Reserve a Table</h4>
+                        <button type="button" class="close" data-dismiss="modal">
+                        &times;
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-row form-group">
+                                <p class="col-sm-3 col-form-label">Number of Guests</p>
+                                <div class="col-sm">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="guests" id="one" value="1">
+                                        <label class="form-check-label" for="one">1</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="guests" id="two" value="2">
+                                        <label class="form-check-label" for="two">2</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="guests" id="three" value="3">
+                                        <label class="form-check-label" for="three">3</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="guests" id="four" value="4">
+                                        <label class="form-check-label" for="three">4</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="guests" id="five" value="5">
+                                        <label class="form-check-label" for="three">5</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="guests" id="six" value="6">
+                                        <label class="form-check-label" for="three">6</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row form-group">
+                                <label class="col-sm-3 col-form-label">Section</label>
+                                <div class="col-sm">
+                                    <!-- correct radio button group with the labels non-smoking in green and smoking
+                                         in red is included in the form. Use the correct button color classes for the buttons. 
+                                         The label of the row containing the buttons is set to Section. 
+                                         The non-smoking button is checked by default.  
+                                        <button type="button" class="btn btn-primary">Primary</button>
+                                        <button type="button" class="btn btn-secondary">Secondary</button>
+                                        <button type="button" class="btn btn-success">Success</button>
+                                        <button type="button" class="btn btn-danger">Danger</button>
+                                        <button type="button" class="btn btn-warning">Warning</button>
+                                        <button type="button" class="btn btn-info">Info</button>
+                                        <button type="button" class="btn btn-light">Light</button>
+                                        <button type="button" class="btn btn-dark">Dark</button>
+
+                                        <button type="button" class="btn btn-link">Link</button>
+                                        -->
+                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                        <label class="btn btn-success active">
+                                        <input class="btn-check" type="radio" name="section" id="nonsmoking" autocomplete="off" checked>
+                                        Non-Smoking
+                                       </label>
+                                        <label class="btn btn-danger">
+                                        <input class="btn-check" type="radio" name="section" id="smoking" autocomplete="off">
+                                        Smoking
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row form-group">
+                                <label for="date" class="col-sm-3 col-form-label">Date and Time</label>
+                                <div class="col-sm">
+                                    <input type="date" class="col-sm-4" id="datetime" name="date" placeholder="Choose Date">
+                                    <input type="time" class="col-sm-4 offset-md-1" id="datetime" name="time" placeholder="Choose Time">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="offset-sm-3 col-sm">
+                                    <button type="button" class="btn btn-secondary btn-md ml-auto" data-dismiss="modal">Cancel</button>
+                                    <button type="submit" class="btn btn-primary btn-md ml-1">Reserve</button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
-            </form>
+            </div>
         </div>
-        <div class="col-sm-2"></div>
-    </div>
-    </div>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-sm-4 col-md-2">
-                    <h5>Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Menu</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="col-12 col-sm-7 col-md-5">
-                    <h5>Our Address</h5>
-                    <address class="address">
+        <footer class="footer ">
+            <div class="container ">
+                <div class="row ">
+                    <div class="col-12 col-sm-4 col-md-2 ">
+                        <h5>Links</h5>
+                        <ul class="list-unstyled ">
+                            <li><a href="# ">Home</a></li>
+                            <li><a href="# ">About</a></li>
+                            <li><a href="# ">Menu</a></li>
+                            <li><a href="# ">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-sm-7 col-md-5 ">
+                        <h5>Our Address</h5>
+                        <address class="address ">
 		              121, Clear Water Bay Road<br>
 		              Clear Water Bay, Kowloon<br>
 		              HONG KONG<br>
-		              <span class="fa fa-phone fa-lg"></span> Tel.: +852 1234 5678<br>
-		              <span class="fa fa-fax fa-lg"></span> Fax: +852 8765 4321<br>
-		              <span class="fa fa-envelope fa-lg"></span> Email: <a href="mailto:confusion@food.net">confusion@food.net</a>
+		              <span class="fa fa-phone fa-lg "></span> Tel.: +852 1234 5678<br>
+		              <span class="fa fa-fax fa-lg "></span> Fax: +852 8765 4321<br>
+		              <span class="fa fa-envelope fa-lg "></span> Email: <a href="mailto:confusion@food.net ">confusion@food.net</a>
 		           </address>
+                    </div>
+                    <div class="col-12 col-sm col-md-4 ">
+                        <div class="text-center ">
+                            <h5 class="p-2 ">Social Handles</h5>
+                            <a class="btn btn-social-icon btn-google " href="http://google.com/+ "><i class="fa fa-google-plus fa-lg "></i></a>
+                            <a class="btn btn-social-icon btn-facebook " href="http://www.facebook.com/profile.php?id="><i class=" fa fa-facebook fa-lg "></i></a>
+                            <a class="btn btn-social-icon btn-linkedin " href="http://www.linkedin.com/in/ "><i class="fa fa-linkedin fa-lg "></i></a>
+                            <a class="btn btn-social-icon btn-twitter " href="http://twitter.com/ "><i class="fa fa-twitter fa-lg "></i></a>
+                            <a class="btn btn-social-icon btn-google " href="http://youtube.com/ "><i class="fa fa-youtube fa-lg "></i></a>
+                            <a class="btn btn-social-icon " href="mailto: "><i class="fa fa-envelope-o fa-lg "></i></a>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-12 col-sm col-md-4">
-                    <div class="text-center">
-                        <h5 class="p-2">Social Handles</h5>
-                        <a class="btn btn-social-icon btn-google" href="http://google.com/+"><i class="fa fa-google-plus fa-lg"></i></a>
-                        <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i class="fa fa-facebook fa-lg"></i></a>
-                        <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i class="fa fa-linkedin fa-lg"></i></a>
-                        <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter fa-lg"></i></a>
-                        <a class="btn btn-social-icon btn-google" href="http://youtube.com/"><i class="fa fa-youtube fa-lg"></i></a>
-                        <a class="btn btn-social-icon" href="mailto:"><i class="fa fa-envelope-o fa-lg"></i></a>
+                <div class="row justify-content-center ">
+                    <div class="col-auto py-2 ">
+                        <p>© Copyright 2018 Ristorante Con Fusion</p>
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-auto py-2">
-                    <p>© Copyright 2018 Ristorante Con Fusion</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
-    <script src="node_modules/jquery/dist/jquery.slim.min.js "></script>
-    <script src="node_modules/popper.js/dist/umd/popper.min.js "></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js "></script>
+        </footer>
+        <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+        <script src="node_modules/jquery/dist/jquery.slim.min.js "></script>
+        <script src="node_modules/popper.js/dist/umd/popper.min.js "></script>
+        <script src="node_modules/bootstrap/dist/js/bootstrap.min.js "></script>
+        <!--The tooltip needs to be activated by adding a small Javascript code to the bottom of the page as follows:
+        <script>
+            $(document).ready(function() {
+                $('[data-toggle="tooltip"]').tooltip();
+            });
+        </script>  -->
 </body>
 
 </html>
