@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css\styles.css">
     <title>Ristorante Con Fusion</title>
 
 </head>
@@ -50,8 +50,9 @@
                         <a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span>contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
-                    <span class="fa fa-sign-in"></span> Login</a>
+                    <!--<a data-toggle="modal" data-target="#loginModal">-->
+                        <a id="btnLogin">
+                            <span class="fa fa-sign-in"></span> Login</a>
                 </span>
             </div>
 
@@ -65,7 +66,8 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Login </h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <button type="button" class="cancel-modal close" id="close">&times;</button>
+                    <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
                 </div>
                 <div class="modal-body">
                     <form>
@@ -87,7 +89,8 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                            <!-- <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>  -->
+                            <button type="button" class="btn btn-secondary btn-sm ml-auto">Cancel</button>
                             <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>
                         </div>
                     </form>
@@ -109,7 +112,15 @@
                 </div>
                 <div class="col-12 col-sm align-self-center ">
                     <!--  <a role="button" class="btn btn-block nav-link btn-warning" data-toggle="tooltip" data-html="true" title="Or Call us at  <br><strong>+852 12345678</strong>" data-placement="bottom" href="#reserveform">Reserve Table</a>  -->
-                    <a role="button" class="btn btn-block nav-link btn-warning" data-toggle="modal" data-target="#reserveform">Reserve Table</a>
+                    <!--- <a role="button" class="btn btn-block nav-link btn-warning" data-toggle="modal" data-target="#reserveform">Reserve Table</a> -->
+                    <a role="button" id="btnReservation" class="btn btn-block nav-link btn-warning">Reserve Table</a>
+
+                    <!--Another method
+                         <button class="btn btn-warning btn-block" id="reserveTableButton"> Reserve Table</button>
+                         BY WRITTING ABOVE we add this in javascript
+                    $("#reserveTableButton").click(function(){
+                        $("#reserveModal").modal('toggle');
+                    });-->
                 </div>
             </div>
         </div>
@@ -164,72 +175,85 @@
                     <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
                         <span class="carousel-control-next-icon"></span>
                     </a>
-
+                    <!--  Adding the Carousel Control Buttons     (Bootstrap and JQuery)            
+                    <div class="btn-group" id="carouselButton">
+                             <button class="btn btn-danger btn-sm" id="carousel-pause">
+                	          <span class="fa fa-pause"></span>
+                              </button>
+                              <button class="btn btn-danger btn-sm" id="carousel-play">
+                	          <span class="fa fa-play"></span>
+                               </button>     
+                    </div>
+                            ( Modifying the Carousel Control Buttons )        -->
+                    <button class="btn btn-danger btn-sm" id="carouselButton">
+                        <span id="carousel-button-icon" class="fa fa-pause"></span>
+                    </button>
                 </div>
             </div>
         </div>
+    </div>
 
 
 
-        <div class="row row-content align-items-center ">
-            <div class="col-12 col-sm-4 order-sm-last col-md-3 ">
-                <h3>Our Lipsmacking Culinary Creations</h3>
-            </div>
-            <!--      Bootstrap Badge       Bootstrap Alerts     Bootstrap Progress-->
-            <div class="col col-sm order-sm-first col-md ">
-                <div class="media ">
-                    <img class="d-flex mr-3 img-thumbnail align-self-center " src="img/uthappizza.png " alt="Uthappizza ">
-                    <div class="media-body ">
-                        <h2 class="mt-0 ">Uthappizza<span class="badge badge-danger ">HOT</span><span class="badge badge-pill badge-secondary ">$4.99</span></h2>
-                        <p class="d-none d-sm-block ">
-                            <!--<div class="alert alert-primary " role="alert ">
+    <div class="row row-content align-items-center ">
+        <div class="col-12 col-sm-4 order-sm-last col-md-3 ">
+            <h3>Our Lipsmacking Culinary Creations</h3>
+        </div>
+        <!--      Bootstrap Badge       Bootstrap Alerts     Bootstrap Progress-->
+        <div class="col col-sm order-sm-first col-md ">
+            <div class="media ">
+                <img class="d-flex mr-3 img-thumbnail align-self-center " src="img/uthappizza.png " alt="Uthappizza ">
+                <div class="media-body ">
+                    <h2 class="mt-0 ">Uthappizza<span class="badge badge-danger ">HOT</span><span class="badge badge-pill badge-secondary ">$4.99</span></h2>
+                    <p class="d-none d-sm-block ">
+                        <!--<div class="alert alert-primary " role="alert ">
                                 This is a primary alert—check it out!
                                 <div class="progress ">
                                     <div class="progress-bar " role="progressbar " style="width: 25% " aria-valuenow="25 " aria-valuemin="0 " aria-valuemax="100 "></div>
                                 </div>-->
-                            A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.</p>
-                    </div>
+                        A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.</p>
                 </div>
             </div>
         </div>
+    </div>
 
 
 
-        <!--  mr means marging right
+    <!--  mr means marging right
           mt means margin top-->
-        <div class="row row-content align-items-center ">
-            <div class="col-12 col-sm-4 order-sm-last col-md-3 ">
-                <h3>This Month's Promotions</h3>
+    <div class="row row-content align-items-center ">
+        <div class="col-12 col-sm-4 order-sm-last col-md-3 ">
+            <h3>This Month's Promotions</h3>
+        </div>
+        <div class="d-flex col-12 col-sm-8 order-sm-first col-md-9 ">
+            <div class="media mr-3 ">
+                <img src="img/buffet.png " class="d-flex img-thumbnail ml-2 align-self-center " alt="buffet ">
             </div>
-            <div class="d-flex col-12 col-sm-8 order-sm-first col-md-9 ">
-                <div class="media mr-3 ">
-                    <img src="img/buffet.png " class="d-flex img-thumbnail ml-2 align-self-center " alt="buffet ">
-                </div>
-                <div class="media-body align-self-center ">
-                    <h2 class="mt-0 ">Weekend Grand Buffet <span class="badge badge-danger ">NEW</span></h2>
-                    <p class="d-none d-sm-block ">Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person </p>
-                </div>
+            <div class="media-body align-self-center ">
+                <h2 class="mt-0 ">Weekend Grand Buffet <span class="badge badge-danger ">NEW</span></h2>
+                <p class="d-none d-sm-block ">Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person </p>
             </div>
         </div>
+    </div>
 
 
-        <div class="row row-content align-items-center ">
-            <div class="col-12 col-sm-4 col-md-3 ">
-                <h3>Meet our Culinary Specialists</h3>
+    <div class="row row-content align-items-center ">
+        <div class="col-12 col-sm-4 col-md-3 ">
+            <h3>Meet our Culinary Specialists</h3>
+        </div>
+        <div class="d-flex col-12 col-sm-8 col-md-9 ">
+            <div class="media mr-3 ">
+                <img src="img/alberto.png " class="d-flex img-thumbnail ml-2 align-self-center " alt="alberto ">
             </div>
-            <div class="d-flex col-12 col-sm-8 col-md-9 ">
-                <div class="media mr-3 ">
-                    <img src="img/alberto.png " class="d-flex img-thumbnail ml-2 align-self-center " alt="alberto ">
-                </div>
-                <div class="media-body align-self-center ">
-                    <h2 class="mt-0 ">Alberto Somayya</h2>
-                    <h4>Executive Chef</h4>
-                    <p class="d-none d-sm-block ">Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. </p>
-                </div>
+            <div class="media-body align-self-center ">
+                <h2 class="mt-0 ">Alberto Somayya</h2>
+                <h4>Executive Chef</h4>
+                <p class="d-none d-sm-block ">Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. </p>
             </div>
         </div>
+    </div>
 
-        <!--
+    <!--
             <div class="row row-content" id="reserveform">
              <div class="col-sm-2"></div>
             <div class="col-12 col-sm">
@@ -265,51 +289,55 @@
 
     Adding a Modal -->
 
-        <div id="reserveform" class="modal fade" role="dialog">
-            <div class="modal-dialog modal-lg" role="content">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Reserve a Table</h4>
-                        <button type="button" class="close" data-dismiss="modal">
-                        &times;
-                    </button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="form-row form-group">
-                                <p class="col-sm-3 col-form-label">Number of Guests</p>
-                                <div class="col-sm">
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="guests" id="one" value="1">
-                                        <label class="form-check-label" for="one">1</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="guests" id="two" value="2">
-                                        <label class="form-check-label" for="two">2</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="guests" id="three" value="3">
-                                        <label class="form-check-label" for="three">3</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="guests" id="four" value="4">
-                                        <label class="form-check-label" for="three">4</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="guests" id="five" value="5">
-                                        <label class="form-check-label" for="three">5</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="guests" id="six" value="6">
-                                        <label class="form-check-label" for="three">6</label>
-                                    </div>
+    <div id="reserveform" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="content">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Reserve a Table</h4>
+                    <!-- <button type="button" class="close" data-dismiss="modal">
+                        <a role="button" class="close" id="closeButton2">&times;</a> 
+                     BY WRITTING ABOVE 
+                       we add  IN JSCIPT 
+                                $("#closeButton2").click(function(){
+                                 $("#reserveform").modal('hide'); });-->
+                    <button type="button" class="cancel-modal close"> &times;</button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-row form-group">
+                            <p class="col-sm-3 col-form-label">Number of Guests</p>
+                            <div class="col-sm">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="guests" id="one" value="1">
+                                    <label class="form-check-label" for="one">1</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="guests" id="two" value="2">
+                                    <label class="form-check-label" for="two">2</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="guests" id="three" value="3">
+                                    <label class="form-check-label" for="three">3</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="guests" id="four" value="4">
+                                    <label class="form-check-label" for="three">4</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="guests" id="five" value="5">
+                                    <label class="form-check-label" for="three">5</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="guests" id="six" value="6">
+                                    <label class="form-check-label" for="three">6</label>
                                 </div>
                             </div>
-                            <div class="form-row form-group">
-                                <label class="col-sm-3 col-form-label">Section</label>
-                                <div class="col-sm">
-                                    <!-- correct radio button group with the labels non-smoking in green and smoking
+                        </div>
+                        <div class="form-row form-group">
+                            <label class="col-sm-3 col-form-label">Section</label>
+                            <div class="col-sm">
+                                <!-- correct radio button group with the labels non-smoking in green and smoking
                                          in red is included in the form. Use the correct button color classes for the buttons. 
                                          The label of the row containing the buttons is set to Section. 
                                          The non-smoking button is checked by default.  
@@ -324,52 +352,65 @@
 
                                         <button type="button" class="btn btn-link">Link</button>
                                         -->
-                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                        <label class="btn btn-success active">
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <label class="btn btn-success active">
                                         <input class="btn-check" type="radio" name="section" id="nonsmoking" autocomplete="off" checked>
                                         Non-Smoking
                                        </label>
-                                        <label class="btn btn-danger">
+                                    <label class="btn btn-danger">
                                         <input class="btn-check" type="radio" name="section" id="smoking" autocomplete="off">
                                         Smoking
                                         </label>
-                                    </div>
+                                </div>
+                                <!--  WITH OUT DATA-ATTRIBUTE
+                                      <fieldset class="form-group mb-3 row">
+                                      <legend class="col-md-2 col-form-label">Section</legend>
+                                      <div class="col-md-10">
+                                       <div class="btn-group">
+                                      <input type="radio" class="btn-check" name="options" id="option1"checked>
+                                      <label class="btn btn-success" for="option1">Non-smoking</label>
+                                      <input type="radio" class="btn-check" name="options" id="option2">
+                                      <label class="btn btn-danger" for="option2">Smoking</label>
                                 </div>
                             </div>
-                            <div class="form-row form-group">
-                                <label for="date" class="col-sm-3 col-form-label">Date and Time</label>
-                                <div class="col-sm">
-                                    <input type="date" class="col-sm-4" id="datetime" name="date" placeholder="Choose Date">
-                                    <input type="time" class="col-sm-4 offset-md-1" id="datetime" name="time" placeholder="Choose Time">
-                                </div>
+                        </fieldset>
+                                -->
                             </div>
-                            <div class="form-row">
-                                <div class="offset-sm-3 col-sm">
-                                    <button type="button" class="btn btn-secondary btn-md ml-auto" data-dismiss="modal">Cancel</button>
-                                    <button type="submit" class="btn btn-primary btn-md ml-1">Reserve</button>
-                                </div>
+                        </div>
+                        <div class="form-row form-group">
+                            <label for="date" class="col-sm-3 col-form-label">Date and Time</label>
+                            <div class="col-sm">
+                                <input type="date" class="col-sm-4" id="datetime" name="date" placeholder="Choose Date">
+                                <input type="time" class="col-sm-4 offset-md-1" id="datetime" name="time" placeholder="Choose Time">
                             </div>
-                        </form>
-                    </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="offset-sm-3 col-sm">
+                                <button type="button" class="btn btn-secondary btn-md ml-auto" data-dismiss="modal">Cancel</button>
+                                <button type="submit" class="btn btn-primary btn-md ml-1">Reserve</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
+    </div>
 
-        <footer class="footer ">
-            <div class="container ">
-                <div class="row ">
-                    <div class="col-12 col-sm-4 col-md-2 ">
-                        <h5>Links</h5>
-                        <ul class="list-unstyled ">
-                            <li><a href="# ">Home</a></li>
-                            <li><a href="# ">About</a></li>
-                            <li><a href="# ">Menu</a></li>
-                            <li><a href="# ">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-12 col-sm-7 col-md-5 ">
-                        <h5>Our Address</h5>
-                        <address class="address ">
+    <footer class="footer ">
+        <div class="container ">
+            <div class="row ">
+                <div class="col-12 col-sm-4 col-md-2 ">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled ">
+                        <li><a href="# ">Home</a></li>
+                        <li><a href="# ">About</a></li>
+                        <li><a href="# ">Menu</a></li>
+                        <li><a href="# ">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-7 col-md-5 ">
+                    <h5>Our Address</h5>
+                    <address class="address ">
 		              121, Clear Water Bay Road<br>
 		              Clear Water Bay, Kowloon<br>
 		              HONG KONG<br>
@@ -377,36 +418,87 @@
 		              <span class="fa fa-fax fa-lg "></span> Fax: +852 8765 4321<br>
 		              <span class="fa fa-envelope fa-lg "></span> Email: <a href="mailto:confusion@food.net ">confusion@food.net</a>
 		           </address>
-                    </div>
-                    <div class="col-12 col-sm col-md-4 ">
-                        <div class="text-center ">
-                            <h5 class="p-2 ">Social Handles</h5>
-                            <a class="btn btn-social-icon btn-google " href="http://google.com/+ "><i class="fa fa-google-plus fa-lg "></i></a>
-                            <a class="btn btn-social-icon btn-facebook " href="http://www.facebook.com/profile.php?id="><i class=" fa fa-facebook fa-lg "></i></a>
-                            <a class="btn btn-social-icon btn-linkedin " href="http://www.linkedin.com/in/ "><i class="fa fa-linkedin fa-lg "></i></a>
-                            <a class="btn btn-social-icon btn-twitter " href="http://twitter.com/ "><i class="fa fa-twitter fa-lg "></i></a>
-                            <a class="btn btn-social-icon btn-google " href="http://youtube.com/ "><i class="fa fa-youtube fa-lg "></i></a>
-                            <a class="btn btn-social-icon " href="mailto: "><i class="fa fa-envelope-o fa-lg "></i></a>
-                        </div>
-                    </div>
                 </div>
-                <div class="row justify-content-center ">
-                    <div class="col-auto py-2 ">
-                        <p>© Copyright 2018 Ristorante Con Fusion</p>
+                <div class="col-12 col-sm col-md-4 ">
+                    <div class="text-center ">
+                        <h5 class="p-2 ">Social Handles</h5>
+                        <a class="btn btn-social-icon btn-google " href="http://google.com/+ "><i class="fa fa-google-plus fa-lg "></i></a>
+                        <a class="btn btn-social-icon btn-facebook " href="http://www.facebook.com/profile.php?id="><i class=" fa fa-facebook fa-lg "></i></a>
+                        <a class="btn btn-social-icon btn-linkedin " href="http://www.linkedin.com/in/ "><i class="fa fa-linkedin fa-lg "></i></a>
+                        <a class="btn btn-social-icon btn-twitter " href="http://twitter.com/ "><i class="fa fa-twitter fa-lg "></i></a>
+                        <a class="btn btn-social-icon btn-google " href="http://youtube.com/ "><i class="fa fa-youtube fa-lg "></i></a>
+                        <a class="btn btn-social-icon " href="mailto: "><i class="fa fa-envelope-o fa-lg "></i></a>
                     </div>
                 </div>
             </div>
-        </footer>
-        <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
-        <script src="node_modules/jquery/dist/jquery.slim.min.js "></script>
-        <script src="node_modules/popper.js/dist/umd/popper.min.js "></script>
-        <script src="node_modules/bootstrap/dist/js/bootstrap.min.js "></script>
-        <!--The tooltip needs to be activated by adding a small Javascript code to the bottom of the page as follows:
+            <div class="row justify-content-center ">
+                <div class="col-auto py-2 ">
+                    <p>© Copyright 2018 Ristorante Con Fusion</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+    <script src="node_modules/jquery/dist/jquery.slim.min.js "></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js "></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js "></script>
+    <!--The tooltip needs to be activated by adding a small Javascript code to the bottom of the page as follows:
         <script>
             $(document).ready(function() {
                 $('[data-toggle="tooltip"]').tooltip();
             });
-        </script>  -->
+        </script> 
+                                                    
+                   Adding JavaScript Code   (Bootstrap and JQuery)                         
+    <script>
+        $(document).ready(function() {
+            $("#mycarousel").carousel({
+                interval: 2000
+            });
+            $("#carousel-pause").click(function() {
+                $("#mycarousel").carousel('pause');
+            });
+            $("#carousel-play").click(function() {
+                $("#mycarousel").carousel('cycle');
+            });
+        });
+    </script> 
+
+Modifying JavaScript Code      -->
+    <script>
+        $(document).ready(function() {
+            $("#mycarousel").carousel({
+                interval: 2000
+            });
+            $("#carouselButton").click(function() {
+                if ($("#carouselButton").children("span").hasClass('fa-pause')) {
+                    $("#mycarousel").carousel('pause');
+                    $("#carouselButton").children("span").removeClass('fa-pause');
+                    $("#carouselButton").children("span").addClass('fa-play');
+                } else if ($("#carouselButton").children("span").hasClass('fa-play')) {
+                    $("#mycarousel").carousel('cycle');
+                    $("#carouselButton").children("span").removeClass('fa-play');
+                    $("#carouselButton").children("span").addClass('fa-pause');
+                }
+            });
+            $("#btnReservation").click(function() {
+                $('#reserveform').modal('show');
+            });
+            $('.cancel-modal').click(function() {
+                $('#reserveform').modal('hide');
+            });
+            $("#btnLogin").click(function() {
+                $('#loginModal').modal('show');
+            });
+            $(".cancel-modal").click(function() {
+                $('#loginModal').modal('hide');
+            });
+        });
+    </script>
+
+    <!-- we use id so  $("#btnReservation")
+    if we use class  $('.cancel-modal').click(function()-->
+
 </body>
 
 </html>
