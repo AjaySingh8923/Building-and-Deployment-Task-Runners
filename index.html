@@ -9,10 +9,14 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <!-- Bootstrap CSS -->
+
+    <!-- build:css css/main.css -->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
-    <link rel="stylesheet" href="css\styles.css">
+    <link href="css\styles.css" rel="stylesheet">
+    <!-- endbuild -->
+
     <title>Ristorante Con Fusion</title>
 
 </head>
@@ -439,9 +443,18 @@
         </div>
     </footer>
     <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+
+    <!-- build:js js/main.js -->
     <script src="node_modules/jquery/dist/jquery.slim.min.js "></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js "></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js "></script>
+    <script src="js/scripts.js"></script>
+    <!-- endbuild -->
+
+
+
+
+
     <!--The tooltip needs to be activated by adding a small Javascript code to the bottom of the page as follows:
         <script>
             $(document).ready(function() {
@@ -465,38 +478,40 @@
     </script> 
 
 Modifying JavaScript Code      -->
+
+    <!-- 
     <script>
-        $(document).ready(function() {
-            $("#mycarousel").carousel({
-                interval: 2000
-            });
-            $("#carouselButton").click(function() {
-                if ($("#carouselButton").children("span").hasClass('fa-pause')) {
-                    $("#mycarousel").carousel('pause');
-                    $("#carouselButton").children("span").removeClass('fa-pause');
-                    $("#carouselButton").children("span").addClass('fa-play');
-                } else if ($("#carouselButton").children("span").hasClass('fa-play')) {
-                    $("#mycarousel").carousel('cycle');
-                    $("#carouselButton").children("span").removeClass('fa-play');
-                    $("#carouselButton").children("span").addClass('fa-pause');
-                }
-            });
-            $("#btnReservation").click(function() {
-                $('#reserveform').modal('show');
-            });
-            $('.cancel-modal').click(function() {
-                $('#reserveform').modal('hide');
-            });
-            $("#btnLogin").click(function() {
-                $('#loginModal').modal('show');
-            });
-            $(".cancel-modal").click(function() {
-                $('#loginModal').modal('hide');
-            });
-        });
+    $(document).ready(function() {
+    $("#mycarousel").carousel({
+        interval: 2000
+    });
+    $("#carouselButton").click(function() {
+        if ($("#carouselButton").children("span").hasClass('fa-pause')) {
+            $("#mycarousel").carousel('pause');
+            $("#carouselButton").children("span").removeClass('fa-pause');
+            $("#carouselButton").children("span").addClass('fa-play');
+        } else if ($("#carouselButton").children("span").hasClass('fa-play')) {
+            $("#mycarousel").carousel('cycle');
+            $("#carouselButton").children("span").removeClass('fa-play');
+            $("#carouselButton").children("span").addClass('fa-pause');
+        }
+    });
+    $("#btnReservation").click(function() {
+        $('#reserveform').modal('show');
+    });
+    $('.cancel-modal').click(function() {
+        $('#reserveform').modal('hide');
+    });
+    $("#btnLogin").click(function() {
+        $('#loginModal').modal('show');
+    });
+    $(".cancel-modal").click(function() {
+        $('#loginModal').modal('hide');
+    });
+}   );
     </script>
 
-    <!-- we use id so  $("#btnReservation")
+    we use id so  $("#btnReservation")
     if we use class  $('.cancel-modal').click(function()-->
 
 </body>
